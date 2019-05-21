@@ -106,5 +106,5 @@ env:
   - LC_ALL=en_US.UTF-8
 branches:
   only:
-  - dc/travis-build
+  - master
 skip_cleanup: true
