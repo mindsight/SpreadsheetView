@@ -104,4 +104,7 @@ env:
   global:
   - LANG=en_US.UTF-8
   - LC_ALL=en_US.UTF-8
+branches:
+  only:
+  - dc/travis-build
 skip_cleanup: true

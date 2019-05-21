@@ -22,6 +22,7 @@ Pod::Spec.new do |s|
   s.source_files     = 'Framework/Sources/*.swift'
   s.pod_target_xcconfig = { 'SWIFT_WHOLE_MODULE_OPTIMIZATION' => 'YES', 'APPLICATION_EXTENSION_API_ONLY' => 'YES' }
   s.frameworks = 'UIKit'
+  s.swift_version = "4.2"
   s.source           = { :git => 'https://github.com/kishikawakatsumi/SpreadsheetView.git', :tag => "v#{s.version}" }
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Kishikawa Katsumi' => 'kishikawakatsumi@mac.com' }
