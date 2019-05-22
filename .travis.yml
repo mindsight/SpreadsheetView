@@ -12,13 +12,17 @@ jobs:
     script:
     - bundle exec rake build-for-testing:simulator
   - &test
-    stage: 'test (xcode10)'
+    stage: 'test (xcode10.2)'
     osx_image: xcode10.2
     script:
     - bundle exec rake test-without-building:simulator
       DESTINATIONS="['name=iPad Pro (12.9-inch),OS=12.2']"
     after_success:
     - bash <(curl -s https://codecov.io/bash) -f 'coverage.txt'
+  - <<: *test
+    script:
+    - bundle exec rake test-without-building:simulator
+      DESTINATIONS="['name=iPhone Xs,OS=12.2']"
   - <<: *test
     script:
     - bundle exec rake test-without-building:simulator
