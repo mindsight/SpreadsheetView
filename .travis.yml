@@ -12,94 +12,65 @@ jobs:
     script:
     - bundle exec rake build-for-testing:simulator
   - &test
-    stage: 'test (xcode10)'
+    stage: 'test (xcode10.2)'
     osx_image: xcode10.2
     script:
     - bundle exec rake test-without-building:simulator
-      DESTINATIONS="['name=iPhone 4s,OS=9.3']"
+      DESTINATIONS="['name=iPad Pro (12.9-inch),OS=12.2']"
     after_success:
     - bash <(curl -s https://codecov.io/bash) -f 'coverage.txt'
   - <<: *test
     script:
     - bundle exec rake test-without-building:simulator
-      DESTINATIONS="['name=iPhone 5,OS=9.3']"
+      DESTINATIONS="['name=iPhone Xs,OS=12.2']"
   - <<: *test
     script:
     - bundle exec rake test-without-building:simulator
-      DESTINATIONS="['name=iPhone 6s,OS=10.3.1', 'name=iPhone 7 Plus,OS=10.3.1']"
+      DESTINATIONS="['name=iPad Pro (12.9-inch),OS=12.2']"
   - <<: *test
     script:
     - bundle exec rake test-without-building:simulator
-      DESTINATIONS="['name=iPad Air 2,OS=10.3.1']"
+      DESTINATIONS="['name=iPad Pro (12.9-inch),OS=12.2']" TESTCASE='MergedCellTests'
   - <<: *test
     script:
     - bundle exec rake test-without-building:simulator
-      DESTINATIONS="['name=iPad Pro (9.7-inch),OS=10.3.1']"
+      DESTINATIONS="['name=iPad Pro (12.9-inch),OS=12.2']" TESTCASE='ScrollTests/testTableViewScrolling'
   - <<: *test
     script:
     - bundle exec rake test-without-building:simulator
-      DESTINATIONS="['name=iPad Pro (12.9-inch),OS=10.3.1']"
+      DESTINATIONS="['name=iPad Pro (12.9-inch),OS=12.2']" TESTCASE='ScrollTests/testColumnHeaderViewScrolling'
   - <<: *test
     script:
     - bundle exec rake test-without-building:simulator
-      DESTINATIONS="['name=iPhone 6s Plus,OS=11.0']"
+      DESTINATIONS="['name=iPad Pro (12.9-inch),OS=12.2']" TESTCASE='ScrollTests/testRowHeaderViewScrolling'
   - <<: *test
     script:
     - bundle exec rake test-without-building:simulator
-      DESTINATIONS="['name=iPhone 7,OS=11.0']"
+      DESTINATIONS="['name=iPad Pro (12.9-inch),OS=12.2']" TESTCASE='ScrollTests/testColumnAndRowHeaderViewScrolling'
   - <<: *test
     script:
     - bundle exec rake test-without-building:simulator
-      DESTINATIONS="['name=iPad Pro (12.9-inch),OS=11.0']"
+      DESTINATIONS="['name=iPad Pro (12.9-inch),OS=12.2']" TESTCASE='ScrollTests/testCircularScrolling'
   - <<: *test
     script:
     - bundle exec rake test-without-building:simulator
-      DESTINATIONS="['name=iPad 2,OS=9.3']" TESTCASE='MergedCellTests'
-  - <<: *test
+      DESTINATIONS="['name=iPad Pro (12.9-inch),OS=12.2']" TESTCASE='SelectionTests'
+  - stage: 'test (xcode10.2)'
+    osx_image: xcode10.2
     script:
-    - bundle exec rake test-without-building:simulator
-      DESTINATIONS="['name=iPad 2,OS=9.3']" TESTCASE='ScrollTests/testTableViewScrolling'
-  - <<: *test
-    script:
-    - bundle exec rake test-without-building:simulator
-      DESTINATIONS="['name=iPad 2,OS=9.3']" TESTCASE='ScrollTests/testColumnHeaderViewScrolling'
-  - <<: *test
-    script:
-    - bundle exec rake test-without-building:simulator
-      DESTINATIONS="['name=iPad 2,OS=9.3']" TESTCASE='ScrollTests/testRowHeaderViewScrolling'
-  - <<: *test
-    script:
-    - bundle exec rake test-without-building:simulator
-      DESTINATIONS="['name=iPad 2,OS=9.3']" TESTCASE='ScrollTests/testColumnAndRowHeaderViewScrolling'
-  - <<: *test
-    script:
-    - bundle exec rake test-without-building:simulator
-      DESTINATIONS="['name=iPad 2,OS=9.3']" TESTCASE='ScrollTests/testCircularScrolling'
-  - <<: *test
-    script:
-    - bundle exec rake test-without-building:simulator
-      DESTINATIONS="['name=iPad 2,OS=9.3']" TESTCASE='SelectionTests'
-  - stage: 'test (xcode8.3)'
-    osx_image: xcode8.3
-    script:
-    - bundle exec rake test:simulator DESTINATIONS="['name=iPhone 4s,OS=9.3']" SWIFT_VERSION=3.0
+    - bundle exec rake test:simulator DESTINATIONS="['name=iPad Pro (12.9-inch),OS=12.2']"
     after_success:
     - bash <(curl -s https://codecov.io/bash) -f 'coverage.txt'
-  - stage: 'test (xcode8.3)'
-    osx_image: xcode8.3
+  - stage: 'test (xcode10.2)'
+    osx_image: xcode10.2
     script:
-    - bundle exec rake test:simulator DESTINATIONS="['name=iPhone 7,OS=10.3.1']" SWIFT_VERSION=3.0
+    - bundle exec rake test:simulator DESTINATIONS="['name=iPhone 7,OS=12.2']"
     after_success:
     - bash <(curl -s https://codecov.io/bash) -f 'coverage.txt'
   - stage: carthage
-    osx_image: xcode9
+    osx_image: xcode10.2
     script:
     - carthage build --no-skip-current
-  - stage: carthage
-    osx_image: xcode8.3
-    script:
-    - echo SWIFT_VERSION=\"3.0\" > swift3.xcconfig
-    - XCODE_XCCONFIG_FILE=`pwd`/swift3.xcconfig carthage build --no-skip-current
 env:
   global:
   - LANG=en_US.UTF-8
