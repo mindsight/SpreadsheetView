@@ -77,5 +77,5 @@ env:
   - LC_ALL=en_US.UTF-8
 branches:
   only:
-  - dc/fix-tests
+  - master
 skip_cleanup: true
