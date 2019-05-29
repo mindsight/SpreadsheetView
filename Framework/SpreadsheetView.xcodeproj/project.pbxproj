@@ -11,7 +11,6 @@
 		143664BD1EB59DCA00321E5E /* ViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143664BC1EB59DCA00321E5E /* ViewTests.swift */; };
 		143664BF1EB5A01600321E5E /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143664BE1EB5A01500321E5E /* HelperFunctions.swift */; };
 		143664C11EB5A07300321E5E /* HelperObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143664C01EB5A07300321E5E /* HelperObjects.swift */; };
-		143664C31EB61FE900321E5E /* SelectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143664C21EB61FE900321E5E /* SelectionTests.swift */; };
 		143664C51EB6201800321E5E /* PerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143664C41EB6201800321E5E /* PerformanceTests.swift */; };
 		143664C71EB6509900321E5E /* SpreadsheetView+Touches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143664C61EB6509800321E5E /* SpreadsheetView+Touches.swift */; };
 		143664C91EB6518600321E5E /* SpreadsheetView+UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143664C81EB6518600321E5E /* SpreadsheetView+UIScrollView.swift */; };
@@ -466,7 +465,6 @@
 				14CBB7F01EC8AF22005BEEB3 /* CellRangeTests.swift in Sources */,
 				147898E31ECB607E004BB0A1 /* CellTests.swift in Sources */,
 				143664BF1EB5A01600321E5E /* HelperFunctions.swift in Sources */,
-				143664C31EB61FE900321E5E /* SelectionTests.swift in Sources */,
 				149E24021EBECDFB0049E172 /* DataSourceTests.swift in Sources */,
 				14AE25761EBF1F8C0003D1F8 /* MergedCellTests.swift in Sources */,
 			);
