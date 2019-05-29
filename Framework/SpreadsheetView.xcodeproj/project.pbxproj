@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		141210001EE1D7A7004E41A3 /* SpreadsheetView+UISnapshotting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14120FFF1EE1D7A7004E41A3 /* SpreadsheetView+UISnapshotting.swift */; };
-		143664BD1EB59DCA00321E5E /* ViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143664BC1EB59DCA00321E5E /* ViewTests.swift */; };
 		143664BF1EB5A01600321E5E /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143664BE1EB5A01500321E5E /* HelperFunctions.swift */; };
 		143664C11EB5A07300321E5E /* HelperObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143664C01EB5A07300321E5E /* HelperObjects.swift */; };
 		143664C51EB6201800321E5E /* PerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143664C41EB6201800321E5E /* PerformanceTests.swift */; };
@@ -457,7 +456,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				143664BD1EB59DCA00321E5E /* ViewTests.swift in Sources */,
 				149E6A781EADE048000D851D /* ScrollTests.swift in Sources */,
 				1478491F1EC38F8D0020C938 /* ConfigurationTests.swift in Sources */,
 				143664C51EB6201800321E5E /* PerformanceTests.swift in Sources */,
