@@ -86,7 +86,11 @@ open class Cell: UIView {
     }
 
     func setup() {
-        backgroundColor = .white
+        if #available(iOSApplicationExtension 13.0, *) {
+            backgroundColor = .systemBackground
+        } else {
+            backgroundColor = .white
+        }
 
         contentView.frame = bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]

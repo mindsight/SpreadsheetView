@@ -36,7 +36,11 @@ func defaultViewController(parameters: Parameters) -> SpreadsheetViewController 
 
 func showViewController(viewController: UIViewController) {
     let window = UIWindow()
-    window.backgroundColor = .white
+    if #available(iOSApplicationExtension 13.0, *) {
+        window.backgroundColor = .systemBackground
+    } else {
+        window.backgroundColor = .white
+    }
     window.rootViewController = viewController
     window.makeKeyAndVisible()
 }

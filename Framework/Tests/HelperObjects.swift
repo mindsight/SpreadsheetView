@@ -198,7 +198,11 @@ class DebugCell: Cell {
         contentView.addSubview(label)
 
         let bgView = UIView()
-        bgView.backgroundColor = .white
+        if #available(iOSApplicationExtension 13.0, *) {
+            bgView.backgroundColor = .systemBackground
+        } else {
+            bgView.backgroundColor = .white
+        }
         backgroundView = bgView
 
         let sbgView = UIView()
